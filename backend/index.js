@@ -23,6 +23,9 @@ catch(e){
 }
 connection();
 
+app.use(express.json());
+
+
 app.get("/" , (req,res)=>{
     res.send("1st route")
 })

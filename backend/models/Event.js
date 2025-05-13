@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const eventSchema = new mongoose.Schema({
     title:{
-        require: true,
+        required: true,
         type:String,
 
     },
@@ -11,9 +11,9 @@ const eventSchema = new mongoose.Schema({
     image:String,
     link:{
         type:String, 
-        require:true
+        required:true
     },
-    desctiption :String, 
+    description :String, 
 },
 {
     timestamps:true

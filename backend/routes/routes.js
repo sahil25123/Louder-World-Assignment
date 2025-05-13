@@ -4,4 +4,6 @@ import {getEventController ,  postEventController} from "../controllers/EventCon
 const router = express.Router();
 
 router.get("/events" ,getEventController);
+
+ router.post("/events" , postEventController);
 export default router;
