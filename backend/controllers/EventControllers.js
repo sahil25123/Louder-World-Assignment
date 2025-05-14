@@ -9,8 +9,6 @@ import Event from "../models/Event.js";
     }
     catch(e){
         res.status(500).json({message:e.message});
-
-
     }
     
 };

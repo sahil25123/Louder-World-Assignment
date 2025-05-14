@@ -6,4 +6,19 @@ const router = express.Router();
 router.get("/events" ,getEventController);
 
  router.post("/events" , postEventController);
+
+ router.get("/scrape", async (req, res) => {
+    try {
+        const scrapedData = await scrapeEvents();
+
+        // Optional: clear old events before inserting
+        await Event.deleteMany();
+
+        const inserted = await Event.insertMany(scrapedData);
+        res.status(200).json({ message: "Scraped and saved", inserted });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 export default router;
