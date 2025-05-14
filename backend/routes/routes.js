@@ -1,5 +1,7 @@
 import express from "express";
 import {getEventController ,  postEventController} from "../controllers/EventControllers.js";
+import scrapeEvents from "../scraper/scrapeEvents.js";
+import Event from "../models/Event.js";
 
 const router = express.Router();
 
