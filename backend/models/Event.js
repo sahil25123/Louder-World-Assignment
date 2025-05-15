@@ -14,6 +14,16 @@ const eventSchema = new mongoose.Schema({
         required:true
     },
     description :String, 
+    subscribers: [{
+        email: {
+            type: String,
+            required: true
+        },
+        subscribedAt: {
+            type: Date,
+            default: Date.now
+        }
+    }]
 },
 {
     timestamps:true

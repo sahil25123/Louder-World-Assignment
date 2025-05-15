@@ -1,15 +1,15 @@
 import express from "express";
-import {getEventController ,  postEventController} from "../controllers/EventControllers.js";
+import { getEventController, postEventController, subscribeToEventController } from "../controllers/EventControllers.js";
 import scrapeEvents from "../scraper/scrapeEvents.js";
 import Event from "../models/Event.js";
 
 const router = express.Router();
 
-router.get("/events" ,getEventController);
+router.get("/events", getEventController);
+router.post("/events", postEventController);
+router.post("/events/:id/subscribe", subscribeToEventController);
 
- router.post("/events" , postEventController);
-
- router.get("/scrape", async (req, res) => {
+router.get("/scrape", async (req, res) => {
     try {
         const scrapedData = await scrapeEvents();
 
