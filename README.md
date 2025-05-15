@@ -37,8 +37,8 @@ A full-stack web application that aggregates and displays events in Sydney, allo
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/sydney-events.git
-cd sydney-events
+git clone  https://github.com/sahil25123/Louder-World-Assignment
+cd Louder-World-Assignment
 ```
 
 2. Install backend dependencies:
