@@ -12,7 +12,7 @@ import EventCard from './components/EventCard';
 import EmailModal from './components/EmailModal';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000https://louder-world-assignment-ffto.onrender.com/api';
+const API_URL = 'https://louder-world-assignment-ffto.onrender.com/api';
 
 function App() {
   const [events, setEvents] = useState([]);
