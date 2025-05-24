@@ -16,7 +16,10 @@ const _dirname = path.resolve();
 
 dotenv.config();
 
-allowedOrigns = ["https://louder-world-assignment-ffto.onrender.com/" ,"http://localhost:3000"]
+const allowedOrigns = [
+    "https://louder-world-assignment-ffto.onrender.com/" 
+    ,"http://localhost:3000"
+];
 
 // Enable CORS for all routes
 app.use(cors({
