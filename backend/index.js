@@ -1,3 +1,4 @@
+import path from "path";
 import express from "express"
 import mongoose from "mongoose";
 import dotenv from "dotenv";
@@ -6,10 +7,14 @@ import scrapeEvents from "./scraper/scrapeEvents.js"
 import Event from "./models/Event.js"
 import cors from "cors";
 
-dotenv.config();
+import { contains } from "cheerio";
 
 const app = express();
 const port = 9000;
+
+const _dirname = path.resolve();
+
+dotenv.config();
 
 // Enable CORS for all routes
 app.use(cors({
@@ -68,11 +73,13 @@ performScraping();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("Sydney Events API")
-});
 
 app.use("/api", routes);
+
+app.use(express.static(path.join(_dirname , "/frontend/dist")))
+app.get("/*path", (req, res) => {
+    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+});
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
